@@ -1,0 +1,14 @@
+image: jelaniwoods/appdev2021-omnicalc-1@sha256:5b8554e2163e932972e9592de1364103853e56ae56c59e06160a3e4ffd7166d7
+
+tasks:
+  - command: bundle install
+  - init: bin/setup
+ports:
+  - port: 3000
+    onOpen: open-preview
+
+vscode:
+  extensions:
+    - shd101wyy.markdown-preview-enhanced
+    - Vense.rails-snippets
+    - wingrunr21.vscode-ruby
