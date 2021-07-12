@@ -31,7 +31,11 @@ def calculate_payment_form
 end
 
 def calculate_random_form
+    @lower = params.fetch("user_min").to_f
+    @upper = params.fetch("user_max").to_f 
+    @result = rand(@lower..@upper).to_f
     render({ :template => "calculation_templates/random_results.html.erb"})
+
 end
 
 end
