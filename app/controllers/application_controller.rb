@@ -17,7 +17,7 @@ def blank_random_form
 end
 
 def calculate_square_form
-    @num = params.fetch("number").to_i
+    @num = params.fetch("number").to_f
     @square_of_num = @num ** 2
     render({ :template => "calculation_templates/square_results.html.erb"})
 end
