@@ -23,6 +23,8 @@ def calculate_square_form
 end
 
 def calculate_square_root_form
+    @num = params.fetch("number").to_f
+    @square_root_num = @num ** (1/2.0)
     render({ :template => "calculation_templates/square_root_results.html.erb"})
 end
 
