@@ -29,6 +29,12 @@ def calculate_square_root_form
 end
 
 def calculate_payment_form
+    @apr = params.fetch("user_apr").to_f
+    @new_apr = (@apr/100.0)/12
+    @years =params.fetch("user_years").to_i
+    @periods = @years.to_f * 12
+    @principal = params.fetch("user_principal").to_f
+    @payment = @principal *( (@new_apr * ( 1 + @new_apr)**@periods)  / ( ( 1 + @new_apr )** @periods - 1) ).to_f
     render({ :template => "calculation_templates/payment_results.html.erb"})
 end
 
